@@ -1,106 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Online Shop</title>
+  <meta charset="UTF-8">
+  <title>Halaman Registrasi</title>
   <style>
-  #header { 
-    grid-area: header;
-    background: #e03e3e;
-    color: rgb(36, 145, 152);
-    text-align: center;
-    padding: 20px;
-    font-size: 24px;
-  }
-  
-  #menu {
-    grid-area: menu;
-    background: #ca537d;
-    color: rgb(26, 132, 136);
-    text-align: center;
-    padding: 15px;
-  }
-  
-  #l-side {
-    grid-area: l-side;
-    background: #ea15ad;
-    padding: 20px;
-  }
-  
-  #r-side {
-    grid-area: r-side;
-    background: #79118c;
-    padding: 20px;
-  }
-  
-  #footer {
-    grid-area: footer;
-    background: #f106d1;
-    color: rgb(9, 124, 172);
-    text-align: center;
-    padding: 15px;
-  }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: white;
+    }
 
-  </style>
-</html>
+    #container {
+      display: grid;
+      grid-template-areas:
+        "header header"
+        "menu menu"
+        "l-side content"
+        "footer footer";
+      grid-template-columns: 25% 75%;
+      grid-template-rows: auto auto 1fr auto;
+      height: 100vh;
+    }
+
+    /* Header */
+    #header {
+      grid-area: header;
+      background: #ff00aa;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 24px;
+      font-weight: bold;
+      border-radius: 10px 10px 0 0;
+    }
+
+    /* Menu navigasi */
+    #menu {
+      grid-area: menu;
+      background: #cc4b7c;
+      text-align: center;
+      padding: 12px 0;
+    }
+
+    #menu a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      margin: 0 20px;
+      padding: 8px 16px;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    #menu a:hover {
+      background: #ff00aa;
+    }
+
+    /* Sisi kiri (image slider) */
+    #l-side {
+      grid-area: l-side;
+      background: #f1a6d4;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-style: italic;
+      font-size: 18px;
+      border-radius: 0 0 0 10px;
+    }
+
+    /* Konten form */
+    #content {
+      grid-area: content;
+      background: #295bb4;
+      color: white;
+      padding: 30px;
+      border-radius: 0 0 10px 0;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    table {
+      margin: 0 auto;
+      color: white;
+    }
+
+    td {
+      padding: 8px;
+    }
+
+    input[type="text"], input[type="date"], select {
+      padding: 6px;
+      width: 180px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    input[type="radio"] {
+      margin-left: 10px;
+    }
+
+    /* Footer */
+    #footer {
+      grid-area: footer;
+      background: #ff00aa;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-weight: bold;
+      border-radius: 0 0 10px 10px;
+    }
   </style>
 </head>
 <body>
   <div id="container">
-    <div id="header"> Header </div>
-    <div id="menu"> Menu </div>
-        <a href="Index.html">Beranda</a>
-        <a href="produk.html">Produk</a>
-        <a href="member.html">Member</a>
-        <a href="registerasi.html">Registerasi</a>
+    <div id="header">Header</div>
+
+    <div id="menu">
+      <a href="index.html">Beranda</a>
+      <a href="produk.html">Produk</a>
+      <a href="member.html">Member</a>
+      <a href="registerasi.html">Registerasi</a>
     </div>
 
-    <div id="l-side"> Image slider </div>
-    <div id="r-side"> Advertise </div>
-        <table>
-            <tr>
-                <td>Nama Lengkap</td><td>:</td>
-                <td>input type="text" name="fullname"></td>
-            </tr>
+    <div id="l-side">Image slider</div>
 
-            <tr>
-                <td>NIK</td><td>:</td>
-                <td>input type="text" name="nik"></td>
-            </tr>
+    <div id="content">
+      <h2>Halaman Registrasi</h2>
+      <table>
+        <tr>
+          <td>Nama Lengkap</td><td>:</td>
+          <td><input type="text" name="fullname"></td>
+        </tr>
+        <tr>
+          <td>NIK</td><td>:</td>
+          <td><input type="text" name="nik"></td>
+        </tr>
+        <tr>
+          <td>Alamat</td><td>:</td>
+          <td><input type="text" name="alamat"></td>
+        </tr>
+        <tr>
+          <td>TTL</td><td>:</td>
+          <td><input type="text" name="tempat" placeholder="Tempat"> 
+              <input type="date" name="tanggal_lahir"></td>
+        </tr>
+        <tr>
+          <td>Handphone</td><td>:</td>
+          <td><input type="text" name="hp"></td>
+        </tr>
+        <tr>
+          <td>Jenis Kelamin</td><td>:</td>
+          <td>
+            <input type="radio" name="jk" value="L">Laki-laki
+            <input type="radio" name="jk" value="P">Perempuan
+          </td>
+        </tr>
+        <tr>
+          <td>Agama</td><td>:</td>
+          <td>
+            <select name="agama">
+              <option value="islam">Islam</option>
+              <option value="kristen">Kristen</option>
+              <option value="katolik">Katolik</option>
+              <option value="budha">Budha</option>
+              <option value="konghucu">Konghucu</option>
+            </select>
+          </td>
+        </tr>
+      </table>
+    </div>
 
-            <tr>
-                <td>Alamat</td><td>:</td>
-                <td>input type="text" name="alamat"></td>
-            </tr>
-
-            <tr>
-                <td>TTL</td><td>:</td>
-                <td>input type="text" name="tempat"> <input type ="date" name="tanggal lahir"></td>
-            </tr>
-
-            <tr>
-                <td>Hanphone</td><td>:</td>
-                <td>input type="text" name="hp"></td>
-            </tr>
-
-            <tr>
-                <td>Jenis Kelamin</td><td>:</td>
-                <td><select name="jk">
-                    <option value="L">Laki-laki</option>
-                    <option value="P">Perempuan</option>
-                </select>
-            </tr>
-
-            <tr>
-                <td>Agama</td><td>:</td>
-                <td><select name="agama">
-                    <option value="islam">Islam</option>
-                    <option value="kristen">Kristen</option>
-                    <option value="katolok">Katolik</option>
-                    <option value="budha">Budha</option>
-                    <option value="konghucu">Konghucu</option>
-                </select>
-            </tr>
-        </table>
-    <div id="footer"> Footer </div>
+    <div id="footer">Footer</div>
+  </div>
 </body>
 </html>
