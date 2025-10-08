@@ -1,0 +1,76 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f7f7f7;
+}
+
+header {
+  background: purple;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+.banner {
+  background: url('img/banner-batik.jpg') no-repeat center center/cover;
+  text-align: center;
+  color: #fff;
+  padding: 60px 0;
+  font-size: 36px;
+  font-weight: bold;
+  text-shadow: 2px 2px 6px #000;
+}
+
+main {
+  display: flex;
+  margin: 20px 40px;
+}
+
+.produk-container {
+  flex: 3;
+}
+
+.produk-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.produk-card {
+  background: white;
+  padding: 10px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.produk-card img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.sidebar {
+  flex: 1;
+  margin-left: 30px;
+}
+
+footer {
+  display: flex;
+  justify-content: space-around;
+  background: #eee;
+  padding: 20px 0;
+  margin-top: 30px;
+}
+
+footer h4 {
+  margin-bottom: 10px;
+}
